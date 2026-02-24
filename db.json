@@ -1,0 +1,52 @@
+{
+  "attractions": [
+    {
+      "id": "922e",
+      "nombre": "Princesas",
+      "categoria": "infantil",
+      "estado": "activa",
+      "alturaMinima": "1.10",
+      "tiempoEspera": "10"
+    },
+    {
+      "id": "4a1c",
+      "nombre": "Carrusel Mágico",
+      "categoria": "infantil",
+      "estado": "activa",
+      "alturaMinima": "0.80",
+      "tiempoEspera": "10 "
+    },
+    {
+      "id": "b209",
+      "nombre": "Mansión del Terror",
+      "categoria": "extrema",
+      "estado": "activa",
+      "alturaMinima": "1.50m",
+      "tiempoEspera": "45 min"
+    },
+    {
+      "id": "a7e9",
+      "nombre": "Montaña Rusa Titan",
+      "categoria": "extrema",
+      "estado": "activa",
+      "alturaMinima": "1.40m",
+      "tiempoEspera": "45 min"
+    },
+    {
+      "id": "8dd4",
+      "nombre": "Sillas voladoras",
+      "categoria": "familiar",
+      "estado": "activa",
+      "alturaMinima": "1.10m",
+      "tiempoEspera": "15 min"
+    },
+    {
+      "id": "b8ca",
+      "nombre": "La Torre",
+      "categoria": "Extrema",
+      "estado": "activa",
+      "alturaMinima": "1.40m",
+      "tiempoEspera": "25 min"
+    }
+  ]
+}

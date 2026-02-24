@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parque de Diversiones - Gestión de Atracciones</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎢 Gestión de Atracciones</h1>
+            <p>Panel administrativo del Parque de Diversiones</p>
+        </header>
+
+        <main>
+            <section class="form-section">
+                <div class="card">
+                    <h2 id="form-title">Registrar Nueva Atracción</h2>
+                    <form id="attraction-form">
+                        <input type="hidden" id="attraction-id">
+                        <div class="form-group">
+                            <label for="nombre">Nombre de la Atracción</label>
+                            <input type="text" id="nombre" required placeholder="Ej: Montaña Rusa Titán">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="categoria">Categoría</label>
+                                <select id="categoria" required>
+                                    <option value="" disabled selected>Seleccione una categoría</option>
+                                    <option value="infantil">Infantil</option>
+                                    <option value="familiar">Familiar</option>
+                                    <option value="extrema">Extrema</option>
+                                    <option value="acuática">Acuática</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="estado">Estado</label>
+                                <select id="estado" required>
+                                    <option value="activa">Activa</option>
+                                    <option value="en mantenimiento">En Mantenimiento</option>
+                                    <option value="fuera de servicio">Fuera de Servicio</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="alturaMinima">Altura Mínima (m)</label>
+                                <input type="text" id="alturaMinima" required placeholder="Ej: 1.40m">
+                            </div>
+                            <div class="form-group">
+                                <label for="tiempoEspera">Tiempo de Espera</label>
+                                <input type="text" id="tiempoEspera" required placeholder="Ej: 20 min">
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" id="submit-btn" class="btn btn-primary">Guardar Atracción</button>
+                            <button type="button" id="cancel-btn" class="btn btn-secondary hidden">Cancelar Edición</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <section class="list-section">
+                <div class="list-header">
+                    <h2>Lista de Atracciones</h2>
+                    <span id="total-attractions" class="badge">0 atracciones</span>
+                </div>
+                <div class="table-responsive">
+                    <table id="attractions-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Estado</th>
+                                <th>Altura Mín.</th>
+                                <th>Espera</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="attractions-tbody">
+                            <!-- Se cargará dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/services.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
