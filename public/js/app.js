@@ -1,6 +1,10 @@
 /**
  * Lógica principal del Frontend para interactuar con el DOM y los servicios
  */
+
+import {getAttractions,postAttractions,updateAttractions,deleteAttractions} from "../services/services.js";
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Elementos del DOM
     const attractionForm = document.getElementById('attraction-form');
@@ -24,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Función para cargar y mostrar las atracciones desde la API
     async function loadAttractions() {
         try {
-            const attractions = await attractionService.getAll();
+            const attractions = await getAttractions();
             renderAttractions(attractions);
         } catch (error) {
             Swal.fire('Error', 'No se pudieron cargar las atracciones', 'error');
@@ -85,11 +89,11 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             if (isEditing) {
                 // Si estamos en modo edición, llamar a PUT
-                await attractionService.update(id, attractionData);
+                await updateAttractions(id, attractionData);
                 Swal.fire('¡Actualizado!', 'Atracción modificada correctamente', 'success');
             } else {
                 // Si no, llamar a POST para crear
-                await attractionService.create(attractionData);
+                await postAttractions(attractionData);
                 Swal.fire('¡Registrado!', 'Nueva atracción agregada', 'success');
             }
             // Limpiar y refrescar
@@ -145,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (result.isConfirmed) {
             try {
-                await attractionService.delete(id);
+                await deleteAttractions(id);
                 Swal.fire('¡Eliminado!', 'El registro ha sido borrado', 'success');
                 loadAttractions();
             } catch (error) {

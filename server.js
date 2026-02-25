@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  * Ruta principal para cargar el Dashboard de Atracciones
  */
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public/pages', 'index.html'));
 });
 
 // Definir el puerto del servidor
